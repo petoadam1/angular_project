@@ -1,0 +1,12 @@
+p {
+    text-align:center;
+}
+.border {
+    border: 1px solid black;
+}
+.turn-green {
+    background-color: green;
+}
+li {
+    list-style-type: none;
+}

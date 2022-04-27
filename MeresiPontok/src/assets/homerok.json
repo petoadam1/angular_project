@@ -1,0 +1,4 @@
+[{"hely":"Martinkertváros","mertekegyseg":"Celsius",
+    "min":"-30","max":"80","alsohiba":"-10","felsohiba":"40"},
+{"hely":"Szirma","mertekegyseg":"Fahrenheit",
+    "min":"-30","max":"80","alsohiba":"-10","felsohiba":"40"}]

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+        <form [formGroup]="homeroForm">
+            <label for="hely">Hely</label>
+            <input type="text" class="form-control" id="hely" formControlName="hely">
+            <div class="text-danger" *ngIf="hely?.invalid && (hely?.dirty || hely?.touched)">
+                <!--
+                    -a .dirty nézi, hogy a felhasználó a mezőbe írt,
+                    majd kitörölte és úgymond előszőr nincs hiba üzenet
+                    -.touched pedig, hogy belekattintott a mezőbe majd elvitte 
+                    a kurzor és akkor teszi ki a hibát
+                    -->
+                <small *ngIf="hely?.errors?.['required']">Hely is required</small>
+            </div>
+            <!--
+                -ez a formControlName mondja meg, hogy az app.components.ts-ben a 
+                productForm melyik mezőjével egyezzen meg
+                -text-danger : piros lesz a szöveg benne
+            -->
+            <label for="mertekegyseg">Mertekegyseg</label>
+            <input type="text" class="form-control" id="mertekegyseg" formControlName="mertekegyseg">
+            <label for="min">Min</label>
+            <input type="number" class="form-control" id="min" formControlName="min">
+            <label for="max">Max</label>
+            <input type="number" class="form-control" id="max" formControlName="max">
+            <label for="alsohiba">Alsohiba</label>
+            <input type="number" class="form-control" id="alsohiba" formControlName="alsohiba">
+            <label for="felsohiba">Felsohiba</label>
+            <input type="number" class="form-control" id="felsohiba" formControlName="felsohiba">
+            
+            <button class="btn btn-primary mt-2" (click)="saveHomero()" 
+            [disabled]="homeroForm.invalid" >Add Homero</button> 
+            <!--[disabled]="...invalid arra jó, hogy amíg valamelyik mező nincs 
+                helyesen kitöltve, addig nem lehet a gombea kattintani"-->
+        </form>
+    </div>
+</div>
